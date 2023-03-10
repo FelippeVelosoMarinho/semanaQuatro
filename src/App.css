@@ -54,8 +54,38 @@
     height: 1.2rem;
     margin-left: 0.5rem;
     cursor: pointer;
-    filter: invert(1);
     fill: var(--green);
+}
+
+.copyPass img:hover{
+    transform: scale(1.2);
+}
+
+.passInput{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 20rem;
+    height: 3rem;
+    background: var(--bg-color-secondary);
+    border: none;
+
+}
+
+.passInput::-webkit-input-placeholder {
+    color: var(--white);
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+/*personalizar o texto do input de passInput*/
+.passInput::-moz-placeholder {
+    color: var(--white);
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
 }
 
 .optPass{
@@ -114,8 +144,7 @@ input[type="range"]::-webkit-slider-thumb:active {
   margin-bottom: 1rem;
 }
 
-.box input {
-
+input[type="checkbox"] {
   -webkit-appearance: none;
   appearance: none;
   margin: 0;
@@ -129,16 +158,18 @@ input[type="range"]::-webkit-slider-thumb:active {
   cursor: pointer;
 }
 
-.box input::before {
+input[type="checkbox"]::before {
   content: "";
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
   background-color: var(--green);
+  border: 2px solid var(--bg-color-primary);
 }
 
- input:checked::before {
+/*personalizar input checkbox após ser selecionado*/
+input[type="checkbox"]:checked::before {
   transform: scale(1);
 }
 
@@ -200,4 +231,5 @@ input[type="range"]::-webkit-slider-thumb:active {
   color: var(--danger);
   font-size: 16px;
   letter-spacing: 2px;
+  margin-top: 1.8rem;
 }

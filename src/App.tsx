@@ -58,10 +58,10 @@ function App() {
   }
 
   const verifyStrength = () => {
-    if (password.length <= 12) {
+    if (password.length <= 7) {
       setLevel('Weak')
     }
-    if (password.length >= 13 && password.length <= 16 && (upperCase || symbols || numbers)) {
+    if (password.length >= 8 && password.length <= 14 && (upperCase || symbols || numbers)) {
       setLevel('Medium')
     }
 
@@ -74,6 +74,7 @@ function App() {
       <div className="main">
         <h1>Gerador de senhas</h1>
         <div className="copyPass">
+          {/*<input className='passInput'  type="text" value={password} onChange={()=>setPassword}/>*/}
           <p>{password}</p>
           <img src={Copy} alt="copy" title='Copiar senha?' onClick={handleCopyPassword}/>    
         </div>
@@ -111,12 +112,16 @@ function App() {
           </div>
           {
             upperCase || lowerCase || numbers || symbols ?
-            <button className="generate-password" onClick={generatePassword}><p>Generate</p></button> :
-            <button className="generate-password" onClick={generatePassword} disabled><p>Generate</p></button>
+              <button className="generate-password" onClick={generatePassword}><p>Generate</p></button> 
+            :
+              <button className="generate-password" onClick={generatePassword} disabled><p>Generate</p></button>
           }
           
         </div>
-        { !(upperCase || lowerCase || numbers || symbols) ? <p className='validation'>Selecione ao menos uma opção!</p> : null }
+        { !(upperCase || lowerCase || numbers || symbols) ? 
+          <p className='validation'>Selecione ao menos uma opção!</p> 
+        : 
+          null }
       </div>
     )
 }
