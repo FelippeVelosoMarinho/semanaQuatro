@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Unbounded', cursive;
+}
+
+:root{
+  --bg-color-primary: #111016;
+  --bg-color-secondary: #24232A;
+  --green: #A5FFAF;
+  --gray: #85838F;
+  --white: #E7E6ED;
+  --warning: #F6CD6A;
+  --danger: #f66a6a;
+  --success: #81f66a;
+}
